@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace DDD2.AndersonMvvm.ViewModels;
-public abstract class sd : INotifyPropertyChanged
+namespace AndersonMvvm.ViewModels;
+public abstract class ViewModelBase : INotifyPropertyChanged
 {
     /// <summary>
     /// プロパティの値が変更されたときに発生します。

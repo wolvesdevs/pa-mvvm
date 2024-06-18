@@ -28,11 +28,44 @@ partial class MainView
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "MainView";
+        AAALabel = new Label();
+        UpdateButton = new Button();
+        SuspendLayout();
+        // 
+        // AAALabel
+        // 
+        AAALabel.AutoSize = true;
+        AAALabel.Location = new Point(12, 9);
+        AAALabel.Name = "AAALabel";
+        AAALabel.Size = new Size(59, 25);
+        AAALabel.TabIndex = 0;
+        AAALabel.Text = "label1";
+        // 
+        // UpdateButton
+        // 
+        UpdateButton.Location = new Point(182, 9);
+        UpdateButton.Name = "UpdateButton";
+        UpdateButton.Size = new Size(112, 34);
+        UpdateButton.TabIndex = 1;
+        UpdateButton.Text = "update";
+        UpdateButton.UseVisualStyleBackColor = true;
+        UpdateButton.Click += UpdateButton_Click;
+        // 
+        // MainView
+        // 
+        AutoScaleDimensions = new SizeF(10F, 25F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(800, 450);
+        Controls.Add(UpdateButton);
+        Controls.Add(AAALabel);
+        Name = "MainView";
+        Text = "MainView";
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
+
+    private Label AAALabel;
+    private Button UpdateButton;
 }
