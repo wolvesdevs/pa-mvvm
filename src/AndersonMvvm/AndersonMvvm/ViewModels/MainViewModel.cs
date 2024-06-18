@@ -17,10 +17,18 @@ public sealed class MainViewModel : ViewModelBase
         set => SetProperty(ref _bBBTextBoxText, value);
     }
 
+    private DateTime _cCCDateTimePickerValue = DateTime.Now;
+    public DateTime CCCDateTimePickerValue
+    {
+        get => _cCCDateTimePickerValue;
+        set => SetProperty(ref _cCCDateTimePickerValue, value);
+    }
+
     internal void Update()
     {
         AAALabelText = "aaa updated!!";
         BBBTextBoxText = "bbb updated!!";
+        CCCDateTimePickerValue = DateTime.Now.AddDays(7);
     }
 
     internal void Check()

@@ -21,6 +21,8 @@ public partial class MainView : Form
 
         AAALabel.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.AAALabelText));
         BBBTextBox.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.BBBTextBoxText));
+        CCCDateTimePicker.DataBindings.Add("Value", _viewModel, nameof(MainViewModel.CCCDateTimePickerValue));
+
     }
 
     private void UpdateButton_Click(object sender, EventArgs e)
