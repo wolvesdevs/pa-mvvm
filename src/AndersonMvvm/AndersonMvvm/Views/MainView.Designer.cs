@@ -30,6 +30,8 @@ partial class MainView
     {
         AAALabel = new Label();
         UpdateButton = new Button();
+        BBBTextBox = new TextBox();
+        CheckButton = new Button();
         SuspendLayout();
         // 
         // AAALabel
@@ -51,11 +53,30 @@ partial class MainView
         UpdateButton.UseVisualStyleBackColor = true;
         UpdateButton.Click += UpdateButton_Click;
         // 
+        // BBBTextBox
+        // 
+        BBBTextBox.Location = new Point(12, 75);
+        BBBTextBox.Name = "BBBTextBox";
+        BBBTextBox.Size = new Size(150, 31);
+        BBBTextBox.TabIndex = 2;
+        // 
+        // CheckButton
+        // 
+        CheckButton.Location = new Point(365, 9);
+        CheckButton.Name = "CheckButton";
+        CheckButton.Size = new Size(112, 34);
+        CheckButton.TabIndex = 3;
+        CheckButton.Text = "check";
+        CheckButton.UseVisualStyleBackColor = true;
+        CheckButton.Click += CheckButton_Click;
+        // 
         // MainView
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(CheckButton);
+        Controls.Add(BBBTextBox);
         Controls.Add(UpdateButton);
         Controls.Add(AAALabel);
         Name = "MainView";
@@ -68,4 +89,6 @@ partial class MainView
 
     private Label AAALabel;
     private Button UpdateButton;
+    private TextBox BBBTextBox;
+    private Button CheckButton;
 }

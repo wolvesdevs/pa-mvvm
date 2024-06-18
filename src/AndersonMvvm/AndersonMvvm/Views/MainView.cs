@@ -20,10 +20,16 @@ public partial class MainView : Form
         StartPosition = FormStartPosition.CenterScreen;
 
         AAALabel.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.AAALabelText));
+        BBBTextBox.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.BBBTextBoxText));
     }
 
     private void UpdateButton_Click(object sender, EventArgs e)
     {
         _viewModel.Update();
+    }
+
+    private void CheckButton_Click(object sender, EventArgs e)
+    {
+        _viewModel.Check();
     }
 }
