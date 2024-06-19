@@ -24,11 +24,19 @@ public sealed class MainViewModel : ViewModelBase
         set => SetProperty(ref _cCCDateTimePickerValue, value);
     }
 
+    private bool _dDDCheckBoxChecked = false;
+    public bool DDDCheckBoxChecked
+    {
+        get => _dDDCheckBoxChecked;
+        set => SetProperty(ref _dDDCheckBoxChecked, value);
+    }
+
     internal void Update()
     {
         AAALabelText = "aaa updated!!";
         BBBTextBoxText = "bbb updated!!";
         CCCDateTimePickerValue = DateTime.Now.AddDays(7);
+        DDDCheckBoxChecked = true;
     }
 
     internal void Check()

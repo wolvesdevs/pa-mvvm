@@ -33,6 +33,7 @@ partial class MainView
         BBBTextBox = new TextBox();
         CheckButton = new Button();
         CCCDateTimePicker = new DateTimePicker();
+        DDDCheckBox = new CheckBox();
         SuspendLayout();
         // 
         // AAALabel
@@ -78,11 +79,22 @@ partial class MainView
         CCCDateTimePicker.Size = new Size(300, 31);
         CCCDateTimePicker.TabIndex = 4;
         // 
+        // DDDCheckBox
+        // 
+        DDDCheckBox.AutoSize = true;
+        DDDCheckBox.Location = new Point(12, 201);
+        DDDCheckBox.Name = "DDDCheckBox";
+        DDDCheckBox.Size = new Size(121, 29);
+        DDDCheckBox.TabIndex = 5;
+        DDDCheckBox.Text = "checkBox1";
+        DDDCheckBox.UseVisualStyleBackColor = true;
+        // 
         // MainView
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(DDDCheckBox);
         Controls.Add(CCCDateTimePicker);
         Controls.Add(CheckButton);
         Controls.Add(BBBTextBox);
@@ -101,4 +113,5 @@ partial class MainView
     private TextBox BBBTextBox;
     private Button CheckButton;
     private DateTimePicker CCCDateTimePicker;
+    private CheckBox DDDCheckBox;
 }

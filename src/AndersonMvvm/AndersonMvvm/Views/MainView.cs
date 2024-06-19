@@ -22,6 +22,7 @@ public partial class MainView : Form
         AAALabel.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.AAALabelText));
         BBBTextBox.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.BBBTextBoxText));
         CCCDateTimePicker.DataBindings.Add("Value", _viewModel, nameof(MainViewModel.CCCDateTimePickerValue));
+        DDDCheckBox.DataBindings.Add(nameof(DDDCheckBox.Checked), _viewModel, nameof(MainViewModel.DDDCheckBoxChecked));
 
     }
 
