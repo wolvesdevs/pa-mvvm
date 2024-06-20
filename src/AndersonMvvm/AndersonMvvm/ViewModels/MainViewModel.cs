@@ -31,6 +31,36 @@ public sealed class MainViewModel : ViewModelBase
         set => SetProperty(ref _dDDCheckBoxChecked, value);
     }
 
+    private bool _aRadioButtonChecked = false;
+    public bool ARadioButtonChecked
+    {
+        get => _aRadioButtonChecked;
+        set
+        {
+            SetProperty(ref _aRadioButtonChecked, value);
+
+            if (value)
+            {
+                SetProperty(ref _bRadioButtonChecked, false, nameof(BRadioButtonChecked));
+            }
+        }
+    }
+
+    private bool _bRadioButtonChecked = false;
+    public bool BRadioButtonChecked
+    {
+        get => _bRadioButtonChecked;
+        set
+        {
+            SetProperty(ref _bRadioButtonChecked, value);
+
+            if (value)
+            {
+                SetProperty(ref _aRadioButtonChecked, false, nameof(ARadioButtonChecked));
+            }
+        }
+    }
+
     internal void Update()
     {
         AAALabelText = "aaa updated!!";
