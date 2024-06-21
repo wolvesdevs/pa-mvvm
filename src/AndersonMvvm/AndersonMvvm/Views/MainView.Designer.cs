@@ -34,10 +34,9 @@ partial class MainView
         CheckButton = new Button();
         CCCDateTimePicker = new DateTimePicker();
         DDDCheckBox = new CheckBox();
-        groupBox1 = new GroupBox();
         ARadioButton = new BindHelper.BindableRadioButton();
         BRadioButton = new BindHelper.BindableRadioButton();
-        groupBox1.SuspendLayout();
+        EEEComboBox = new ComboBox();
         SuspendLayout();
         // 
         // AAALabel
@@ -93,22 +92,11 @@ partial class MainView
         DDDCheckBox.Text = "checkBox1";
         DDDCheckBox.UseVisualStyleBackColor = true;
         // 
-        // groupBox1
-        // 
-        groupBox1.Controls.Add(BRadioButton);
-        groupBox1.Controls.Add(ARadioButton);
-        groupBox1.Location = new Point(12, 259);
-        groupBox1.Name = "groupBox1";
-        groupBox1.Size = new Size(300, 150);
-        groupBox1.TabIndex = 6;
-        groupBox1.TabStop = false;
-        groupBox1.Text = "groupBox1";
-        // 
         // ARadioButton
         // 
         ARadioButton.AutoCheck = false;
         ARadioButton.AutoSize = true;
-        ARadioButton.Location = new Point(18, 39);
+        ARadioButton.Location = new Point(12, 246);
         ARadioButton.Name = "ARadioButton";
         ARadioButton.Size = new Size(215, 29);
         ARadioButton.TabIndex = 7;
@@ -120,7 +108,7 @@ partial class MainView
         // 
         BRadioButton.AutoCheck = false;
         BRadioButton.AutoSize = true;
-        BRadioButton.Location = new Point(18, 83);
+        BRadioButton.Location = new Point(12, 290);
         BRadioButton.Name = "BRadioButton";
         BRadioButton.Size = new Size(215, 29);
         BRadioButton.TabIndex = 7;
@@ -128,12 +116,22 @@ partial class MainView
         BRadioButton.Text = "bindableRadioButton2";
         BRadioButton.UseVisualStyleBackColor = true;
         // 
+        // EEEComboBox
+        // 
+        EEEComboBox.FormattingEnabled = true;
+        EEEComboBox.Location = new Point(12, 340);
+        EEEComboBox.Name = "EEEComboBox";
+        EEEComboBox.Size = new Size(182, 33);
+        EEEComboBox.TabIndex = 8;
+        // 
         // MainView
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
-        Controls.Add(groupBox1);
+        Controls.Add(EEEComboBox);
+        Controls.Add(BRadioButton);
+        Controls.Add(ARadioButton);
         Controls.Add(DDDCheckBox);
         Controls.Add(CCCDateTimePicker);
         Controls.Add(CheckButton);
@@ -142,8 +140,6 @@ partial class MainView
         Controls.Add(AAALabel);
         Name = "MainView";
         Text = "MainView";
-        groupBox1.ResumeLayout(false);
-        groupBox1.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -156,7 +152,7 @@ partial class MainView
     private Button CheckButton;
     private DateTimePicker CCCDateTimePicker;
     private CheckBox DDDCheckBox;
-    private GroupBox groupBox1;
-    private BindHelper.BindableRadioButton BRadioButton;
     private BindHelper.BindableRadioButton ARadioButton;
+    private BindHelper.BindableRadioButton BRadioButton;
+    private ComboBox EEEComboBox;
 }

@@ -23,6 +23,8 @@ public partial class MainView : Form
         BBBTextBox.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.BBBTextBoxText));
         CCCDateTimePicker.DataBindings.Add("Value", _viewModel, nameof(MainViewModel.CCCDateTimePickerValue));
         DDDCheckBox.DataBindings.Add(nameof(DDDCheckBox.Checked), _viewModel, nameof(MainViewModel.DDDCheckBoxChecked));
+
+        // ラジオボタンのバインディング
         ARadioButton.DataBindings.Add(
             nameof(ARadioButton.Checked),
             _viewModel,
@@ -35,6 +37,12 @@ public partial class MainView : Form
             nameof(MainViewModel.BRadioButtonChecked),
             false,
             DataSourceUpdateMode.OnPropertyChanged);
+
+        // コンボボックスのバインディング
+        EEEComboBox.DataBindings.Add("DataSource", _viewModel, nameof(MainViewModel.ComboSource));
+        EEEComboBox.ValueMember = nameof(MainViewModelCombo.Value);
+        EEEComboBox.DisplayMember = nameof(MainViewModelCombo.DisplayValue);
+        EEEComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
     }
 

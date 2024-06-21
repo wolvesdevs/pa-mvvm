@@ -1,8 +1,12 @@
 ﻿
 
+using System.ComponentModel;
+
 namespace AndersonMvvm.ViewModels;
 public sealed class MainViewModel : ViewModelBase
 {
+    #region フィールド＆プロパティ
+
     private string _aAALabelText = "AAA";
     public string AAALabelText
     {
@@ -61,6 +65,23 @@ public sealed class MainViewModel : ViewModelBase
         }
     }
 
+    public BindingList<MainViewModelCombo> ComboSource { get; set; } = new();
+
+    #endregion
+
+    #region コンストラクタ
+
+    public MainViewModel()
+    {
+        ComboSource.Add(new MainViewModelCombo(1, "AAAAA"));
+        ComboSource.Add(new MainViewModelCombo(2, "BBBBB"));
+        ComboSource.Add(new MainViewModelCombo(3, "CCCCC"));
+    }
+
+    #endregion
+
+    #region メソッド
+
     internal void Update()
     {
         AAALabelText = "aaa updated!!";
@@ -72,4 +93,6 @@ public sealed class MainViewModel : ViewModelBase
     internal void Check()
     {
     }
+
+    #endregion
 }
