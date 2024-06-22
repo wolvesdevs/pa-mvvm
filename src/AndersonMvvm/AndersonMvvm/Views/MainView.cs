@@ -51,6 +51,13 @@ public partial class MainView : Form
             false,
             DataSourceUpdateMode.OnPropertyChanged);
 
+        //MyDataGrid.DataBindings.Add("DataSource", _viewModel, nameof(_viewModel.MyDataGridSource));
+
+        MyDataGrid.DataSource = _viewModel.MyDataGridSource;
+        MyDataGrid.Columns[nameof(MainViewModelGrid.Id)].HeaderText = "ID";
+        MyDataGrid.Columns[nameof(MainViewModelGrid.Name)].HeaderText = "名前";
+        MyDataGrid.Columns[nameof(MainViewModelGrid.Id)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
     }
 
     private void UpdateButton_Click(object sender, EventArgs e)

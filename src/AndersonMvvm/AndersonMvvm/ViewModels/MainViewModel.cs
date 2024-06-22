@@ -80,6 +80,8 @@ public sealed class MainViewModel : ViewModelBase
 
     public MainViewModelCombo EEEComboBoxSelectedItem { get; set; }
 
+    public BindingList<MainViewModelGrid> MyDataGridSource { get; set; } = new();
+
     #endregion
 
     #region コンストラクタ
@@ -89,6 +91,13 @@ public sealed class MainViewModel : ViewModelBase
         ComboSource.Add(new MainViewModelCombo(1, "AAAAA"));
         ComboSource.Add(new MainViewModelCombo(2, "BBBBB"));
         ComboSource.Add(new MainViewModelCombo(3, "CCCCC"));
+
+        MyDataGridSource.Add(new MainViewModelGrid("1", "Name1"));
+        MyDataGridSource.Add(new MainViewModelGrid("2", "Name2"));
+        MyDataGridSource.Add(new MainViewModelGrid("3", "Name3"));
+        MyDataGridSource.Add(new MainViewModelGrid("4", "Name4"));
+        MyDataGridSource.Add(new MainViewModelGrid("5", "Name5"));
+
         EEEComboBoxSelectedValue = 1;
     }
 
@@ -102,6 +111,7 @@ public sealed class MainViewModel : ViewModelBase
         BBBTextBoxText = "bbb updated!!";
         CCCDateTimePickerValue = DateTime.Now.AddDays(7);
         DDDCheckBoxChecked = true;
+        MyDataGridSource.Add(new MainViewModelGrid("6", "Name6"));
     }
 
     internal void Check()

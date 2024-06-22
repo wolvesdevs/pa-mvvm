@@ -37,6 +37,8 @@ partial class MainView
         ARadioButton = new BindHelper.BindableRadioButton();
         BRadioButton = new BindHelper.BindableRadioButton();
         EEEComboBox = new ComboBox();
+        MyDataGrid = new DataGridView();
+        ((System.ComponentModel.ISupportInitialize)MyDataGrid).BeginInit();
         SuspendLayout();
         // 
         // AAALabel
@@ -124,11 +126,21 @@ partial class MainView
         EEEComboBox.Size = new Size(182, 33);
         EEEComboBox.TabIndex = 8;
         // 
+        // MyDataGrid
+        // 
+        MyDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        MyDataGrid.Location = new Point(365, 75);
+        MyDataGrid.Name = "MyDataGrid";
+        MyDataGrid.RowHeadersWidth = 62;
+        MyDataGrid.Size = new Size(360, 225);
+        MyDataGrid.TabIndex = 9;
+        // 
         // MainView
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(MyDataGrid);
         Controls.Add(EEEComboBox);
         Controls.Add(BRadioButton);
         Controls.Add(ARadioButton);
@@ -140,6 +152,7 @@ partial class MainView
         Controls.Add(AAALabel);
         Name = "MainView";
         Text = "MainView";
+        ((System.ComponentModel.ISupportInitialize)MyDataGrid).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -155,4 +168,5 @@ partial class MainView
     private BindHelper.BindableRadioButton ARadioButton;
     private BindHelper.BindableRadioButton BRadioButton;
     private ComboBox EEEComboBox;
+    private DataGridView MyDataGrid;
 }
