@@ -44,6 +44,13 @@ public partial class MainView : Form
         EEEComboBox.DisplayMember = nameof(MainViewModelCombo.DisplayValue);
         EEEComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+        EEEComboBox.DataBindings.Add(
+            "SelectedValue", 
+            _viewModel, 
+            nameof(_viewModel.EEEComboBoxSelectedValue), 
+            false,
+            DataSourceUpdateMode.OnPropertyChanged);
+
     }
 
     private void UpdateButton_Click(object sender, EventArgs e)

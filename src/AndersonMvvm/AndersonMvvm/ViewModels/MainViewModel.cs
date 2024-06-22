@@ -67,6 +67,19 @@ public sealed class MainViewModel : ViewModelBase
 
     public BindingList<MainViewModelCombo> ComboSource { get; set; } = new();
 
+    private object _eEEComboBoxSelectedValue;
+    public object EEEComboBoxSelectedValue
+    {
+        get => _eEEComboBoxSelectedValue;
+        set
+        {
+            SetProperty(ref _eEEComboBoxSelectedValue, value);
+            EEEComboBoxSelectedItem = ComboSource.FirstOrDefault(x => x.Value == (int)value);
+        }
+    }
+
+    public MainViewModelCombo EEEComboBoxSelectedItem { get; set; }
+
     #endregion
 
     #region コンストラクタ
@@ -76,6 +89,7 @@ public sealed class MainViewModel : ViewModelBase
         ComboSource.Add(new MainViewModelCombo(1, "AAAAA"));
         ComboSource.Add(new MainViewModelCombo(2, "BBBBB"));
         ComboSource.Add(new MainViewModelCombo(3, "CCCCC"));
+        EEEComboBoxSelectedValue = 1;
     }
 
     #endregion
