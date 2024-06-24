@@ -4,7 +4,7 @@ public sealed class MainViewModelGrid
     #region プロパティ
 
     public string Id { get; }
-    public string Name { get; }
+    public string Name { get; set; }
 
     #endregion
 
