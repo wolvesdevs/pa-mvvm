@@ -112,6 +112,7 @@ public sealed class MainViewModel : ViewModelBase
         CCCDateTimePickerValue = DateTime.Now.AddDays(7);
         DDDCheckBoxChecked = true;
         MyDataGridSource.Add(new MainViewModelGrid("6", "Name6"));
+        ComboSource.Add(new MainViewModelCombo(100, "ZZZZZ"));
     }
 
     internal void Check()
