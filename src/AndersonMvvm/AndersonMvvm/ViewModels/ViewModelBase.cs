@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Components;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace AndersonMvvm.ViewModels;
 public abstract class ViewModelBase : INotifyPropertyChanged
@@ -8,6 +10,8 @@ public abstract class ViewModelBase : INotifyPropertyChanged
     /// プロパティの値が変更されたときに発生します。
     /// </summary>
     public event PropertyChangedEventHandler? PropertyChanged;
+
+    public Dispatcher Dispatcher { get; set; }
 
     /// <summary>
     /// 指定した値でプロパティを設定し、新しい値が異なる場合は PropertyChanged イベントを発生させます。
@@ -53,6 +57,13 @@ public abstract class ViewModelBase : INotifyPropertyChanged
     /// </summary>
     protected void OnAllPropertyChanged()
     {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(""));
+        if (Dispatcher != null)
+        {
+            Dispatcher.InvokeAsync(() => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("")));
+        }
+        else
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(""));
+        }
     }
 }

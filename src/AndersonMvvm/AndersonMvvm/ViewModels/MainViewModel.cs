@@ -1,11 +1,12 @@
-﻿
-
+﻿using AndersonMvvm.BindHelper;
 using System.ComponentModel;
 
 namespace AndersonMvvm.ViewModels;
 public sealed class MainViewModel : ViewModelBase
 {
     #region フィールド＆プロパティ
+
+    IMessageService _messageService;
 
     private string _aAALabelText = "AAA";
     public string AAALabelText
@@ -86,8 +87,12 @@ public sealed class MainViewModel : ViewModelBase
 
     #region コンストラクタ
 
-    public MainViewModel()
+    public MainViewModel() : this(new MessageService()) { }
+
+    public MainViewModel(IMessageService messageService)
     {
+        _messageService = messageService;
+
         ComboSource.Add(new MainViewModelCombo(1, "AAAAA"));
         ComboSource.Add(new MainViewModelCombo(2, "BBBBB"));
         ComboSource.Add(new MainViewModelCombo(3, "CCCCC"));
@@ -105,7 +110,7 @@ public sealed class MainViewModel : ViewModelBase
 
     #region メソッド
 
-    internal void Update()
+    public void Update()
     {
         AAALabelText = "aaa updated!!";
         BBBTextBoxText = "bbb updated!!";
@@ -115,8 +120,18 @@ public sealed class MainViewModel : ViewModelBase
         ComboSource.Add(new MainViewModelCombo(100, "ZZZZZ"));
     }
 
-    internal void Check()
+    public void Check()
     {
+    }
+
+    public void Save()
+    {
+        if (_messageService.QuestionOKCancel("保存しますか？") != DialogResult.OK)
+        {
+            return;
+        }
+
+        AAALabelText = "SAVE!!";
     }
 
     #endregion

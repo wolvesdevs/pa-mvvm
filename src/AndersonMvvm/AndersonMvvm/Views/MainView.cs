@@ -1,4 +1,5 @@
 ﻿using AndersonMvvm.ViewModels;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,9 +46,9 @@ public partial class MainView : Form
         EEEComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
         EEEComboBox.DataBindings.Add(
-            "SelectedValue", 
-            _viewModel, 
-            nameof(_viewModel.EEEComboBoxSelectedValue), 
+            "SelectedValue",
+            _viewModel,
+            nameof(_viewModel.EEEComboBoxSelectedValue),
             false,
             DataSourceUpdateMode.OnPropertyChanged);
 
@@ -60,9 +61,9 @@ public partial class MainView : Form
 
     }
 
-    private void UpdateButton_Click(object sender, EventArgs e)
+    private async void UpdateButton_Click(object sender, EventArgs e)
     {
-        _viewModel.Update();
+        await Task.Run(() => _viewModel.Update());
     }
 
     private void CheckButton_Click(object sender, EventArgs e)
