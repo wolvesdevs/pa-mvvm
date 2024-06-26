@@ -70,4 +70,9 @@ public partial class MainView : Form
     {
         _viewModel.Check();
     }
+
+    private void SaveButton_Click(object sender, EventArgs e)
+    {
+        _viewModel.Save();
+    }
 }

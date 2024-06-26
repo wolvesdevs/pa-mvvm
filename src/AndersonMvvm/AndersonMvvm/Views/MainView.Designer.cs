@@ -38,6 +38,7 @@ partial class MainView
         BRadioButton = new BindHelper.BindableRadioButton();
         EEEComboBox = new ComboBox();
         MyDataGrid = new DataGridView();
+        SaveButton = new Button();
         ((System.ComponentModel.ISupportInitialize)MyDataGrid).BeginInit();
         SuspendLayout();
         // 
@@ -135,11 +136,22 @@ partial class MainView
         MyDataGrid.Size = new Size(360, 225);
         MyDataGrid.TabIndex = 9;
         // 
+        // SaveButton
+        // 
+        SaveButton.Location = new Point(12, 388);
+        SaveButton.Name = "SaveButton";
+        SaveButton.Size = new Size(112, 34);
+        SaveButton.TabIndex = 10;
+        SaveButton.Text = "save";
+        SaveButton.UseVisualStyleBackColor = true;
+        SaveButton.Click += SaveButton_Click;
+        // 
         // MainView
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(SaveButton);
         Controls.Add(MyDataGrid);
         Controls.Add(EEEComboBox);
         Controls.Add(BRadioButton);
@@ -169,4 +181,5 @@ partial class MainView
     private BindHelper.BindableRadioButton BRadioButton;
     private ComboBox EEEComboBox;
     private DataGridView MyDataGrid;
+    private Button SaveButton;
 }
