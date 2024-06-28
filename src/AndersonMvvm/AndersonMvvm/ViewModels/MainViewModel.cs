@@ -1,4 +1,5 @@
 ﻿using AndersonMvvm.BindHelper;
+using AndersonMvvm.Exceptions;
 using System.ComponentModel;
 
 namespace AndersonMvvm.ViewModels;
@@ -75,7 +76,7 @@ public sealed class MainViewModel : ViewModelBase
         set
         {
             SetProperty(ref _eEEComboBoxSelectedValue, value);
-            EEEComboBoxSelectedItem = ComboSource.FirstOrDefault(x => x.Value == (int)value);
+            //EEEComboBoxSelectedItem = ComboSource.FirstOrDefault(x => x.Value == (int)value);
         }
     }
 
@@ -112,7 +113,7 @@ public sealed class MainViewModel : ViewModelBase
 
     public void Update()
     {
-        AAALabelText = "aaa updated!!";
+        AAALabelText = "aaa updated!!"; 
         BBBTextBoxText = "bbb updated!!";
         CCCDateTimePickerValue = DateTime.Now.AddDays(7);
         DDDCheckBoxChecked = true;
@@ -129,6 +130,12 @@ public sealed class MainViewModel : ViewModelBase
         if (_messageService.QuestionOKCancel("保存しますか？") != DialogResult.OK)
         {
             return;
+        }
+
+        int intResult = 0;
+        if (!int.TryParse(BBBTextBoxText, out intResult))
+        {
+            throw new InputException("数値を入力してください");
         }
 
         AAALabelText = "SAVE!!";
