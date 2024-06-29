@@ -1,5 +1,4 @@
-﻿
-namespace AndersonMvvm.BindHelper;
+﻿namespace AndersonMvvm.BindHelper;
 public sealed class BindableRadioButton : RadioButton
 {
     public BindableRadioButton()

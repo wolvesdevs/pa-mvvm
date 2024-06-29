@@ -75,4 +75,9 @@ public partial class MainView : Form
     {
         _viewModel.Save();
     }
+
+    private void SubViewShowButton_Click(object sender, EventArgs e)
+    {
+        _viewModel.ShowSubView();
+    }
 }

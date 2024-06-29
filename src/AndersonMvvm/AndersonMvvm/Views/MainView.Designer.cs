@@ -39,6 +39,7 @@ partial class MainView
         EEEComboBox = new ComboBox();
         MyDataGrid = new DataGridView();
         SaveButton = new Button();
+        SubViewShowButton = new Button();
         ((System.ComponentModel.ISupportInitialize)MyDataGrid).BeginInit();
         SuspendLayout();
         // 
@@ -146,11 +147,22 @@ partial class MainView
         SaveButton.UseVisualStyleBackColor = true;
         SaveButton.Click += SaveButton_Click;
         // 
+        // SubViewShowButton
+        // 
+        SubViewShowButton.Location = new Point(365, 388);
+        SubViewShowButton.Name = "SubViewShowButton";
+        SubViewShowButton.Size = new Size(112, 34);
+        SubViewShowButton.TabIndex = 11;
+        SubViewShowButton.Text = "show";
+        SubViewShowButton.UseVisualStyleBackColor = true;
+        SubViewShowButton.Click += SubViewShowButton_Click;
+        // 
         // MainView
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(SubViewShowButton);
         Controls.Add(SaveButton);
         Controls.Add(MyDataGrid);
         Controls.Add(EEEComboBox);
@@ -182,4 +194,5 @@ partial class MainView
     private ComboBox EEEComboBox;
     private DataGridView MyDataGrid;
     private Button SaveButton;
+    private Button SubViewShowButton;
 }

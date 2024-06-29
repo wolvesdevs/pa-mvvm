@@ -8,6 +8,7 @@ public sealed class MainViewModel : ViewModelBase
     #region フィールド＆プロパティ
 
     IMessageService _messageService;
+    IDialogService _dialogService;
 
     private string _aAALabelText = "AAA";
     public string AAALabelText
@@ -88,11 +89,12 @@ public sealed class MainViewModel : ViewModelBase
 
     #region コンストラクタ
 
-    public MainViewModel() : this(new MessageService()) { }
+    public MainViewModel() : this(new MessageService(), new DialogService()) { }
 
-    public MainViewModel(IMessageService messageService)
+    public MainViewModel(IMessageService messageService, IDialogService dialogService)
     {
         _messageService = messageService;
+        _dialogService = dialogService;
 
         ComboSource.Add(new MainViewModelCombo(1, "AAAAA"));
         ComboSource.Add(new MainViewModelCombo(2, "BBBBB"));
@@ -113,7 +115,7 @@ public sealed class MainViewModel : ViewModelBase
 
     public void Update()
     {
-        AAALabelText = "aaa updated!!"; 
+        AAALabelText = "aaa updated!!";
         BBBTextBoxText = "bbb updated!!";
         CCCDateTimePickerValue = DateTime.Now.AddDays(7);
         DDDCheckBoxChecked = true;
@@ -139,6 +141,12 @@ public sealed class MainViewModel : ViewModelBase
         }
 
         AAALabelText = "SAVE!!";
+    }
+
+    public void ShowSubView()
+    {
+        var vm = new SubViewModel();
+        _dialogService.ShowDialog(vm);
     }
 
     #endregion
