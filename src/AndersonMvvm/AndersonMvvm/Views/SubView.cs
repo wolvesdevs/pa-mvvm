@@ -1,22 +1,23 @@
 ﻿using AndersonMvvm.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AndersonMvvm.Views;
 public partial class SubView : Form
 {
-    private SubViewModel _viewModel = new();
+    private SubViewModel _viewModel;
 
-    public SubView()
+    public SubView(SubViewModel viewModel)
     {
         InitializeComponent();
         StartPosition = FormStartPosition.CenterScreen;
+
+        _viewModel = viewModel;
+
+        IdTextBox.DataBindings.Add("Text", _viewModel, nameof(_viewModel.IdTextBoxText));
+        NameTextBox.DataBindings.Add("Text", _viewModel, nameof(_viewModel.NameTextBoxText));
+    }
+
+    private void CheckButton_Click(object sender, EventArgs e)
+    {
+        _viewModel.Check();
     }
 }

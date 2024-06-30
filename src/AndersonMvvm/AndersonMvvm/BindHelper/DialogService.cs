@@ -7,7 +7,7 @@ public class DialogService : IDialogService
     {
         string viewName = vm.GetType().FullName.Replace("ViewModel", "View");
         Type type = Type.GetType(viewName);
-        var view = (Form)Activator.CreateInstance(type);
+        var view = (Form)Activator.CreateInstance(type, vm);
         return view.ShowDialog();
     }
 }
