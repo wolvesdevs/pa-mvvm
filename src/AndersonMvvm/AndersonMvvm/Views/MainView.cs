@@ -55,6 +55,8 @@ public partial class MainView : Form
         //MyDataGrid.DataBindings.Add("DataSource", _viewModel, nameof(_viewModel.MyDataGridSource));
 
         MyDataGrid.DataSource = _viewModel.MyDataGridSource;
+        MyDataGrid.DoubleClick += (s, e) => _viewModel.MyDataGridDoubleClick(MyDataGrid.CurrentRow.DataBoundItem as MainViewModelGrid);
+
         MyDataGrid.Columns[nameof(MainViewModelGrid.Id)].HeaderText = "ID";
         MyDataGrid.Columns[nameof(MainViewModelGrid.Name)].HeaderText = "名前";
         MyDataGrid.Columns[nameof(MainViewModelGrid.Id)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

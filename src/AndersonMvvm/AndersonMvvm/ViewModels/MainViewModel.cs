@@ -149,5 +149,11 @@ public sealed class MainViewModel : ViewModelBase
         _dialogService.ShowDialog(vm);
     }
 
+    internal void MyDataGridDoubleClick(MainViewModelGrid row)
+    {
+        var vm = new SubViewModel(row);
+        _dialogService.ShowDialog(vm);
+    }
+
     #endregion
 }
