@@ -17,6 +17,12 @@ public class SubViewModel : ViewModelBase
         get => _nameTextBoxText;
         set => SetProperty(ref _nameTextBoxText, value);
     }
+    private bool _idTextBoxReadOnly = false;
+    public bool IdTextBoxReadOnly
+    {
+        get => _idTextBoxReadOnly;
+        set => SetProperty(ref _idTextBoxReadOnly, value);
+    }
 
     #endregion
 
@@ -24,8 +30,15 @@ public class SubViewModel : ViewModelBase
 
     public SubViewModel(MainViewModelGrid row)
     {
+        if (row == null)
+        {
+            IdTextBoxReadOnly = false;
+            return;
+        }
+
         IdTextBoxText = row.Id;
         NameTextBoxText = row.Name;
+        IdTextBoxReadOnly = true;
     }
 
     #endregion

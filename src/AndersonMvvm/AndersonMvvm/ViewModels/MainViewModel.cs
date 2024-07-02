@@ -145,7 +145,7 @@ public sealed class MainViewModel : ViewModelBase
 
     public void ShowSubView()
     {
-        var vm = new SubViewModel(MyDataGridSource[2]);
+        var vm = new SubViewModel(null);
         _dialogService.ShowDialog(vm);
     }
 

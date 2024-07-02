@@ -33,6 +33,7 @@ partial class SubView
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
         CheckButton = new Button();
+        SaveButton = new Button();
         SuspendLayout();
         // 
         // label1
@@ -77,11 +78,21 @@ partial class SubView
         CheckButton.UseVisualStyleBackColor = true;
         CheckButton.Click += CheckButton_Click;
         // 
+        // SaveButton
+        // 
+        SaveButton.Location = new Point(51, 177);
+        SaveButton.Name = "SaveButton";
+        SaveButton.Size = new Size(249, 34);
+        SaveButton.TabIndex = 5;
+        SaveButton.Text = "save";
+        SaveButton.UseVisualStyleBackColor = true;
+        // 
         // SubView
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(439, 389);
+        Controls.Add(SaveButton);
         Controls.Add(CheckButton);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
@@ -100,4 +111,5 @@ partial class SubView
     private TextBox IdTextBox;
     private TextBox NameTextBox;
     private Button CheckButton;
+    private Button SaveButton;
 }

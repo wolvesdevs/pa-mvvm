@@ -14,6 +14,7 @@ public partial class SubView : Form
 
         IdTextBox.DataBindings.Add("Text", _viewModel, nameof(_viewModel.IdTextBoxText));
         NameTextBox.DataBindings.Add("Text", _viewModel, nameof(_viewModel.NameTextBoxText));
+        IdTextBox.DataBindings.Add(nameof(IdTextBox.ReadOnly), _viewModel, nameof(_viewModel.IdTextBoxReadOnly));
     }
 
     private void CheckButton_Click(object sender, EventArgs e)
