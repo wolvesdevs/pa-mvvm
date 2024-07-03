@@ -85,6 +85,48 @@ public sealed class MainViewModel : ViewModelBase
 
     public BindingList<MainViewModelGrid> MyDataGridSource { get; set; } = new();
 
+    private string _statusLabelText = "AAA";
+    public string StatusLabelText
+    {
+        get => _statusLabelText;
+        set => SetProperty(ref _statusLabelText, value);
+    }
+
+    private int _statusProgressBarValue = 0;
+    public int StatusProgressBarValue
+    {
+        get => _statusProgressBarValue;
+        set => SetProperty(ref _statusProgressBarValue, value);
+    }
+
+    private int _statusProgressBarMinimum = 0;
+    public int StatusProgressBarMinimum
+    {
+        get => _statusProgressBarMinimum;
+        set => SetProperty(ref _statusProgressBarMinimum, value);
+    }
+
+    private int _statusProgressBarMaximum = 0;
+    public int StatusProgressBarMaximum
+    {
+        get => _statusProgressBarMaximum;
+        set => SetProperty(ref _statusProgressBarMaximum, value);
+    }
+
+    private ProgressBarStyle _statusProgressBarStyle = ProgressBarStyle.Blocks;
+    public ProgressBarStyle StatusProgressBarStyle
+    {
+        get => _statusProgressBarStyle;
+        set => SetProperty(ref _statusProgressBarStyle, value);
+    }
+
+    private bool _statusProgressBarVisible = false;
+    public bool StatusProgressBarVisible
+    {
+        get => _statusProgressBarVisible;
+        set => SetProperty(ref _statusProgressBarVisible, value);
+    }
+
     #endregion
 
     #region コンストラクタ
@@ -141,6 +183,8 @@ public sealed class MainViewModel : ViewModelBase
         }
 
         AAALabelText = "SAVE!!";
+
+        StatusLabelText = "保存しました";
     }
 
     public void ShowSubView()
@@ -153,6 +197,21 @@ public sealed class MainViewModel : ViewModelBase
     {
         var vm = new SubViewModel(row);
         _dialogService.ShowDialog(vm);
+    }
+
+    internal void ClickProgressManualButton()
+    {
+        StatusProgressBarVisible = true;
+        StatusProgressBarStyle = ProgressBarStyle.Blocks;
+        StatusProgressBarMinimum = 0;
+        StatusProgressBarMaximum = 100;
+        StatusProgressBarValue = 50;
+    }
+
+    internal void ClickProgressAutoButton()
+    {
+        StatusProgressBarVisible = true;
+        StatusProgressBarStyle = ProgressBarStyle.Marquee;
     }
 
     #endregion

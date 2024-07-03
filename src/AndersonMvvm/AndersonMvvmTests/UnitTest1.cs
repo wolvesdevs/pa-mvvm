@@ -11,9 +11,9 @@ public class UnitTest1
     public void Test1()
     {
         var mock = new Mock<IMessageService>();
-        mock.Setup(x=>x.QuestionOKCancel("ï€ë∂ÇµÇ‹Ç∑Ç©ÅH")).Returns(DialogResult.Cancel);
+        mock.Setup(x => x.QuestionOKCancel("ï€ë∂ÇµÇ‹Ç∑Ç©ÅH")).Returns(DialogResult.Cancel);
 
-        var vm = new MainViewModel(mock.Object);
+        var vm = new MainViewModel(mock.Object, null);
         vm.Save();
         Assert.Equal("SAVE!!", vm.AAALabelText);
     }

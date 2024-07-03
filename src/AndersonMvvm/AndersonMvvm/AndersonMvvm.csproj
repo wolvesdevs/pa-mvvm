@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="8.0.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="BindHelper\BindableToolStripProgressBar.cs" />
+  </ItemGroup>
+
 </Project>
