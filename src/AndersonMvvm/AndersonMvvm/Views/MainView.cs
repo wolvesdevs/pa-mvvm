@@ -11,14 +11,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AndersonMvvm.Views;
-public partial class MainView : Form
+public partial class MainView : ViewBase
 {
     private MainViewModel _viewModel = new();
 
     public MainView()
     {
         InitializeComponent();
-        StartPosition = FormStartPosition.CenterScreen;
+
+        base.Bind(_viewModel);
 
         AAALabel.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.AAALabelText));
         BBBTextBox.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.BBBTextBoxText));
@@ -61,13 +62,6 @@ public partial class MainView : Form
         MyDataGrid.Columns[nameof(MainViewModelGrid.Name)].HeaderText = "名前";
         MyDataGrid.Columns[nameof(MainViewModelGrid.Id)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-        StatusProgressBar.DataBindings.Add(nameof(StatusProgressBar.Value), _viewModel, nameof(_viewModel.StatusProgressBarValue));
-        StatusProgressBar.DataBindings.Add(nameof(StatusProgressBar.Minimum), _viewModel, nameof(_viewModel.StatusProgressBarMinimum));
-        StatusProgressBar.DataBindings.Add(nameof(StatusProgressBar.Maximum), _viewModel, nameof(_viewModel.StatusProgressBarMaximum));
-        StatusProgressBar.DataBindings.Add(nameof(StatusProgressBar.Style), _viewModel, nameof(_viewModel.StatusProgressBarStyle));
-        StatusProgressBar.DataBindings.Add(nameof(StatusProgressBar.Visible), _viewModel, nameof(_viewModel.StatusProgressBarVisible));
-
-        StatusLabel.DataBindings.Add("Text", _viewModel, nameof(_viewModel.StatusLabelText));
     }
 
     private async void UpdateButton_Click(object sender, EventArgs e)

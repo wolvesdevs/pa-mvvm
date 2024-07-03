@@ -66,4 +66,47 @@ public abstract class ViewModelBase : INotifyPropertyChanged
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(""));
         }
     }
+
+    private string _statusLabelText = "AAA";
+    public string StatusLabelText
+    {
+        get => _statusLabelText;
+        set => SetProperty(ref _statusLabelText, value);
+    }
+
+    private int _statusProgressBarValue = 0;
+    public int StatusProgressBarValue
+    {
+        get => _statusProgressBarValue;
+        set => SetProperty(ref _statusProgressBarValue, value);
+    }
+
+    private int _statusProgressBarMinimum = 0;
+    public int StatusProgressBarMinimum
+    {
+        get => _statusProgressBarMinimum;
+        set => SetProperty(ref _statusProgressBarMinimum, value);
+    }
+
+    private int _statusProgressBarMaximum = 0;
+    public int StatusProgressBarMaximum
+    {
+        get => _statusProgressBarMaximum;
+        set => SetProperty(ref _statusProgressBarMaximum, value);
+    }
+
+    private ProgressBarStyle _statusProgressBarStyle = ProgressBarStyle.Blocks;
+    public ProgressBarStyle StatusProgressBarStyle
+    {
+        get => _statusProgressBarStyle;
+        set => SetProperty(ref _statusProgressBarStyle, value);
+    }
+
+    private bool _statusProgressBarVisible = false;
+    public bool StatusProgressBarVisible
+    {
+        get => _statusProgressBarVisible;
+        set => SetProperty(ref _statusProgressBarVisible, value);
+    }
+
 }

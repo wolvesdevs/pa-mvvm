@@ -1,14 +1,15 @@
 ﻿using AndersonMvvm.ViewModels;
 
 namespace AndersonMvvm.Views;
-public partial class SubView : Form
+public partial class SubView : ViewBase
 {
     private SubViewModel _viewModel;
 
     public SubView(SubViewModel viewModel)
     {
         InitializeComponent();
-        StartPosition = FormStartPosition.CenterScreen;
+
+        base.Bind(_viewModel);
 
         _viewModel = viewModel;
 

@@ -40,13 +40,9 @@ partial class MainView
         MyDataGrid = new DataGridView();
         SaveButton = new Button();
         SubViewShowButton = new Button();
-        statusStrip1 = new StatusStrip();
-        StatusProgressBar = new BindHelpers.BindableToolStripProgressBar();
-        StatusLabel = new BindHelpers.BindableToolStripStatusLabel();
         ProgressManualButton = new Button();
         ProgressAutoButton = new Button();
         ((System.ComponentModel.ISupportInitialize)MyDataGrid).BeginInit();
-        statusStrip1.SuspendLayout();
         SuspendLayout();
         // 
         // AAALabel
@@ -163,27 +159,6 @@ partial class MainView
         SubViewShowButton.UseVisualStyleBackColor = true;
         SubViewShowButton.Click += SubViewShowButton_Click;
         // 
-        // statusStrip1
-        // 
-        statusStrip1.ImageScalingSize = new Size(24, 24);
-        statusStrip1.Items.AddRange(new ToolStripItem[] { StatusProgressBar, StatusLabel });
-        statusStrip1.Location = new Point(0, 437);
-        statusStrip1.Name = "statusStrip1";
-        statusStrip1.Size = new Size(800, 32);
-        statusStrip1.TabIndex = 12;
-        statusStrip1.Text = "statusStrip1";
-        // 
-        // StatusProgressBar
-        // 
-        StatusProgressBar.Name = "StatusProgressBar";
-        StatusProgressBar.Size = new Size(100, 24);
-        // 
-        // StatusLabel
-        // 
-        StatusLabel.Name = "StatusLabel";
-        StatusLabel.Size = new Size(251, 25);
-        StatusLabel.Text = "bindableToolStripStatusLabel1";
-        // 
         // ProgressManualButton
         // 
         ProgressManualButton.Location = new Point(515, 316);
@@ -211,7 +186,6 @@ partial class MainView
         ClientSize = new Size(800, 469);
         Controls.Add(ProgressAutoButton);
         Controls.Add(ProgressManualButton);
-        Controls.Add(statusStrip1);
         Controls.Add(SubViewShowButton);
         Controls.Add(SaveButton);
         Controls.Add(MyDataGrid);
@@ -227,8 +201,6 @@ partial class MainView
         Name = "MainView";
         Text = "MainView";
         ((System.ComponentModel.ISupportInitialize)MyDataGrid).EndInit();
-        statusStrip1.ResumeLayout(false);
-        statusStrip1.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -247,9 +219,6 @@ partial class MainView
     private DataGridView MyDataGrid;
     private Button SaveButton;
     private Button SubViewShowButton;
-    private StatusStrip statusStrip1;
-    private BindHelpers.BindableToolStripStatusLabel StatusLabel;
-    private BindHelpers.BindableToolStripProgressBar StatusProgressBar;
     private Button ProgressManualButton;
     private Button ProgressAutoButton;
 }
