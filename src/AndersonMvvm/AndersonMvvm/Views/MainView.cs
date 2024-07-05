@@ -62,36 +62,11 @@ public partial class MainView : ViewBase
         MyDataGrid.Columns[nameof(MainViewModelGrid.Name)].HeaderText = "名前";
         MyDataGrid.Columns[nameof(MainViewModelGrid.Id)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-    }
-
-    private async void UpdateButton_Click(object sender, EventArgs e)
-    {
-        await Task.Run(() => _viewModel.Update());
-    }
-
-    private void CheckButton_Click(object sender, EventArgs e)
-    {
-        _viewModel.Check();
-    }
-
-    private void SaveButton_Click(object sender, EventArgs e)
-    {
-        _viewModel.Save();
-    }
-
-    private void SubViewShowButton_Click(object sender, EventArgs e)
-    {
-        _viewModel.ShowSubView();
-    }
-
-    private void ProgressManualButton_Click(object sender, EventArgs e)
-    {
-        _viewModel.ClickProgressManualButton();
-    }
-
-    private void ProgressAutoButton_Click(object sender, EventArgs e)
-    {
-        _viewModel.ClickProgressAutoButton();
-
+        UpdateButton.Click += (s, e) => _viewModel.Update();
+        CheckButton.Click += (s, e) => _viewModel.Check();
+        SaveButton.Click += (s, e) => _viewModel.Save();
+        SubViewShowButton.Click += (s, e) => _viewModel.ShowSubView();
+        ProgressManualButton.Click += (s, e) => _viewModel.ClickProgressManualButton();
+        ProgressAutoButton.Click += (s, e) => _viewModel.ClickProgressAutoButton();
     }
 }

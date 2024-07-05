@@ -62,7 +62,6 @@ partial class MainView
         UpdateButton.TabIndex = 1;
         UpdateButton.Text = "update";
         UpdateButton.UseVisualStyleBackColor = true;
-        UpdateButton.Click += UpdateButton_Click;
         // 
         // BBBTextBox
         // 
@@ -79,7 +78,6 @@ partial class MainView
         CheckButton.TabIndex = 3;
         CheckButton.Text = "check";
         CheckButton.UseVisualStyleBackColor = true;
-        CheckButton.Click += CheckButton_Click;
         // 
         // CCCDateTimePicker
         // 
@@ -147,7 +145,6 @@ partial class MainView
         SaveButton.TabIndex = 10;
         SaveButton.Text = "save";
         SaveButton.UseVisualStyleBackColor = true;
-        SaveButton.Click += SaveButton_Click;
         // 
         // SubViewShowButton
         // 
@@ -157,7 +154,6 @@ partial class MainView
         SubViewShowButton.TabIndex = 11;
         SubViewShowButton.Text = "show";
         SubViewShowButton.UseVisualStyleBackColor = true;
-        SubViewShowButton.Click += SubViewShowButton_Click;
         // 
         // ProgressManualButton
         // 
@@ -167,7 +163,6 @@ partial class MainView
         ProgressManualButton.TabIndex = 13;
         ProgressManualButton.Text = "Progress手動";
         ProgressManualButton.UseVisualStyleBackColor = true;
-        ProgressManualButton.Click += ProgressManualButton_Click;
         // 
         // ProgressAutoButton
         // 
@@ -177,7 +172,6 @@ partial class MainView
         ProgressAutoButton.TabIndex = 14;
         ProgressAutoButton.Text = "Progress自動";
         ProgressAutoButton.UseVisualStyleBackColor = true;
-        ProgressAutoButton.Click += ProgressAutoButton_Click;
         // 
         // MainView
         // 
