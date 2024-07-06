@@ -19,6 +19,8 @@ public partial class MainView : ViewBase
     {
         InitializeComponent();
 
+        //_viewModel.PropertyChanged += ViewModel_PropertyChanged();
+
         base.Bind(_viewModel);
 
         AAALabel.DataBindings.Add("Text", _viewModel, nameof(MainViewModel.AAALabelText));
@@ -68,5 +70,12 @@ public partial class MainView : ViewBase
         SubViewShowButton.Click += (s, e) => _viewModel.ShowSubView();
         ProgressManualButton.Click += (s, e) => _viewModel.ClickProgressManualButton();
         ProgressAutoButton.Click += (s, e) => _viewModel.ClickProgressAutoButton();
+
+        EEEComboBox.SelectedIndexChanged += (s, e) => _viewModel.EEEComboBoxSelectedIndexChanged(e);
     }
+
+    //private void ViewModel_PropertyChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+    //{
+    //    if(e.PropertyName == )
+    //}
 }

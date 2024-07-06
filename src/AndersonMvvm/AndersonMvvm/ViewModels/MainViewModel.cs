@@ -152,13 +152,13 @@ public sealed class MainViewModel : ViewModelBase
         _dialogService.ShowDialog(vm);
     }
 
-    internal void MyDataGridDoubleClick(MainViewModelGrid row)
+    public void MyDataGridDoubleClick(MainViewModelGrid row)
     {
         var vm = new SubViewModel(row);
         _dialogService.ShowDialog(vm);
     }
 
-    internal void ClickProgressManualButton()
+    public void ClickProgressManualButton()
     {
         StatusProgressBarVisible = true;
         StatusProgressBarStyle = ProgressBarStyle.Blocks;
@@ -167,10 +167,15 @@ public sealed class MainViewModel : ViewModelBase
         StatusProgressBarValue = 50;
     }
 
-    internal void ClickProgressAutoButton()
+    public void ClickProgressAutoButton()
     {
         StatusProgressBarVisible = true;
         StatusProgressBarStyle = ProgressBarStyle.Marquee;
+    }
+
+    public void EEEComboBoxSelectedIndexChanged(EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 
     #endregion
